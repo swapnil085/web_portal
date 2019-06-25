@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Automation\SITL.Automation.Web\bin\Release\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="requirements.txt">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/app.py">
+      <publishTime>06/21/2019 15:32:48</publishTime>
+    </File>
+    <File Include="src/config.py">
+      <publishTime>06/19/2019 12:05:32</publishTime>
+    </File>
+    <File Include="src/controller/login.py">
+      <publishTime>06/21/2019 16:05:59</publishTime>
+    </File>
+    <File Include="src/controller/user.py">
+      <publishTime>06/21/2019 11:40:32</publishTime>
+    </File>
+    <File Include="src/controller/__init__.py">
+      <publishTime>06/18/2019 15:58:55</publishTime>
+    </File>
+    <File Include="src/services/login.py">
+      <publishTime>06/21/2019 16:06:44</publishTime>
+    </File>
+    <File Include="src/services/user.py">
+      <publishTime>06/19/2019 16:48:34</publishTime>
+    </File>
+    <File Include="src/services/__init__.py">
+      <publishTime>06/18/2019 15:59:17</publishTime>
+    </File>
+    <File Include="src/services/__pycache__/login.cpython-37.pyc">
+      <publishTime>06/21/2019 16:06:45</publishTime>
+    </File>
+    <File Include="src/services/__pycache__/user.cpython-37.pyc">
+      <publishTime>06/19/2019 17:02:05</publishTime>
+    </File>
+    <File Include="src/services/__pycache__/__init__.cpython-37.pyc">
+      <publishTime>06/19/2019 13:32:05</publishTime>
+    </File>
+    <File Include="src/static/content/bootstrap.css">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/content/bootstrap.min.css">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/content/site.css">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/bootstrap.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/bootstrap.min.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery-1.10.2.intellisense.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery-1.10.2.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery-1.10.2.min.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery-1.10.2.min.map">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery.validate-vsdoc.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery.validate.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery.validate.min.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery.validate.unobtrusive.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/modernizr-2.6.2.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/respond.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/respond.min.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/static/scripts/_references.js">
+      <publishTime>06/21/2019 11:28:46</publishTime>
+    </File>
+    <File Include="src/templates/dashboard.html">
+      <publishTime>06/21/2019 11:22:33</publishTime>
+    </File>
+    <File Include="src/templates/ec2_instances.html">
+      <publishTime>06/19/2019 17:07:17</publishTime>
+    </File>
+    <File Include="src/templates/index.html">
+      <publishTime>06/21/2019 14:53:55</publishTime>
+    </File>
+    <File Include="src/templates/layout.html">
+      <publishTime>06/21/2019 14:54:58</publishTime>
+    </File>
+    <File Include="src/templates/login.html">
+      <publishTime>06/21/2019 12:24:51</publishTime>
+    </File>
+    <File Include="src/__init__.py">
+      <publishTime>06/21/2019 12:07:28</publishTime>
+    </File>
+    <File Include="src/__pycache__/app.cpython-37.pyc">
+      <publishTime>06/19/2019 13:26:47</publishTime>
+    </File>
+    <File Include="src/__pycache__/config.cpython-37.pyc">
+      <publishTime>06/19/2019 12:05:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

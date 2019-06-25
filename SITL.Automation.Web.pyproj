@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>b7c79459-b850-406e-b24e-c8e44affed2c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>src\app.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>SITL.Automation.Web</Name>
+    <RootNamespace>SITL.Automation.Web</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src\config.py" />
+    <Compile Include="src\controller\login.py" />
+    <Compile Include="src\controller\user.py" />
+    <Compile Include="src\controller\__init__.py" />
+    <Compile Include="src\services\login.py" />
+    <Compile Include="src\services\user.py" />
+    <Compile Include="src\services\__init__.py" />
+    <Compile Include="src\__init__.py" />
+    <Compile Include="src\app.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\controller\" />
+    <Folder Include="src\db\" />
+    <Folder Include="src\services\" />
+    <Folder Include="src\services\__pycache__\" />
+    <Folder Include="src\static\" />
+    <Folder Include="src\static\content\" />
+    <Folder Include="src\static\fonts\" />
+    <Folder Include="src\static\scripts\" />
+    <Folder Include="src\templates\" />
+    <Folder Include="src\__pycache__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FolderProfile.pubxml" />
+    <Content Include="requirements.txt" />
+    <Content Include="src\services\__pycache__\login.cpython-37.pyc" />
+    <Content Include="src\services\__pycache__\user.cpython-37.pyc" />
+    <Content Include="src\services\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="src\static\content\bootstrap.css" />
+    <Content Include="src\static\content\bootstrap.min.css" />
+    <Content Include="src\static\content\site.css" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="src\static\scripts\bootstrap.js" />
+    <Content Include="src\static\scripts\bootstrap.min.js" />
+    <Content Include="src\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="src\static\scripts\jquery-1.10.2.js" />
+    <Content Include="src\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="src\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="src\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="src\static\scripts\jquery.validate.js" />
+    <Content Include="src\static\scripts\jquery.validate.min.js" />
+    <Content Include="src\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="src\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="src\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="src\static\scripts\respond.js" />
+    <Content Include="src\static\scripts\respond.min.js" />
+    <Content Include="src\static\scripts\_references.js" />
+    <Content Include="src\templates\dashboard.html" />
+    <Content Include="src\templates\ec2_instances.html" />
+    <Content Include="src\templates\index.html" />
+    <Content Include="src\templates\layout.html" />
+    <Content Include="src\templates\login.html" />
+    <Content Include="src\__pycache__\app.cpython-37.pyc" />
+    <Content Include="src\__pycache__\config.cpython-37.pyc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
