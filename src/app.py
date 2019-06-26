@@ -2,6 +2,7 @@ from flask import Flask, g, render_template, request ,redirect, url_for, Bluepri
 from flask import flash , session
 import os
 
+# importing controllers
 from controller.login import auth
 from controller.user import user
 from controller.aws import aws
@@ -12,7 +13,6 @@ app.config.from_object("config")
 app.secret_key = "secret"
 
 # registering blueprints
-# login blueprint
 app.register_blueprint(auth)
 app.register_blueprint(user)
 app.register_blueprint(aws)
