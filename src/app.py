@@ -4,6 +4,7 @@ import os
 
 from controller.login import auth
 from controller.user import user
+from controller.aws import aws
 
 TEMPLATE_DIR = os.path.abspath('/templates')
 app = Flask(__name__,template_folder = TEMPLATE_DIR)
@@ -14,6 +15,7 @@ app.secret_key = "secret"
 # login blueprint
 app.register_blueprint(auth)
 app.register_blueprint(user)
+app.register_blueprint(aws)
 
 @app.route("/",methods=["GET"])
 @app.route("/home",methods=["GET"])

@@ -3,7 +3,7 @@ import os
 import boto3
 from ldap3 import Server, Connection
 
-class Login:
+class Login():
     @classmethod
     def login_user(self,username,password):
         server = Server('bglbg1w8dc01.sonata.local')

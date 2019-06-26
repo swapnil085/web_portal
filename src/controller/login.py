@@ -1,9 +1,18 @@
 from flask import Blueprint, render_template, abort,request, redirect, url_for,session
 from jinja2 import TemplateNotFound
 from services.login import Login
-
+from functools import wraps
 
 auth = Blueprint("user_login", __name__ , template_folder="../templates")
+
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            return redirect(url_for('login_user'))
+    return wrap
 
 
 @auth.route("/",methods=["GET"])
@@ -20,17 +29,20 @@ def login_user():
         if Login.login_user(username,password):
             l = username.split("@")
             name = l[0]
-            return redirect(url_for(".dashboard",name=name))
+            username = name
+            return redirect(url_for(".dashboard",username=username))
         else:
             return render_template("login.html")
     return render_template("login.html")
 
 
-@auth.route("/<name>",methods=["GET","POST"])
-def dashboard(name):
-    return render_template("dashboard.html")
+@auth.route("/<username>",methods=["GET","POST"])
+@is_logged_in
+def dashboard(username):
+    return render_template("dashboard.html",username=username)
 
 @auth.route('/logout',methods=["GET","POST"])
+@is_logged_in
 def logout():
     session.clear()
     return redirect(url_for("index"))

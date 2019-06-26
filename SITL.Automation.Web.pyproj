@@ -28,12 +28,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="src\config.py" />
+    <Compile Include="src\controller\aws.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\controller\login.py" />
     <Compile Include="src\controller\user.py" />
     <Compile Include="src\controller\__init__.py" />
+    <Compile Include="src\services\aws.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\services\login.py" />
     <Compile Include="src\services\user.py" />
     <Compile Include="src\services\__init__.py" />
+    <Compile Include="src\templates\aws\dashboard.html">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\__init__.py" />
     <Compile Include="src\app.py" />
   </ItemGroup>
@@ -48,6 +57,7 @@
     <Folder Include="src\static\fonts\" />
     <Folder Include="src\static\scripts\" />
     <Folder Include="src\templates\" />
+    <Folder Include="src\templates\aws\" />
     <Folder Include="src\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
