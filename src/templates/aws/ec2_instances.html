@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<head>
+    <meta charset="utf-8" />
+    <title>List of EC2 instances</title>
+</head>
+<body name >
+    <form action="http://localhost:5000/" method="post">
+        {% for InstanceID, Region in result.items() %}
+        <p> {{ InstanceID }} </p>
+        <p> {{ Region }} </p>
+        <p><input type="submit" value="Start {{InstanceID}}" name="Start" /></p>
+        <p><input type="submit" value="Stop {{InstanceID}}" name="Stop" /></p>
+        <br />
+        {% endfor %}
+    </form>
+</body>
+</html>

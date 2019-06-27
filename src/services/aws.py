@@ -3,6 +3,8 @@ import os
 import boto3
 
 class Aws():
+    def __init__(self, Instanceid):
+            self.instanceid = Instanceid
 
     @classmethod
     def get_session(self,username):
@@ -16,3 +18,13 @@ class Aws():
         ec2 = session.resource("ec2")
         instance_list = ec2.instances.all()
         return instance_list
+
+    def Start(self):
+            Instance = instance.start(InstanceID = [self.instanceid])
+            #Instance = instance.start(InstanceID.N = [self.instanceid])
+            ##https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html
+            return Instance
+
+    def Stop(self):
+            Instance = instance.stop(InstanceID = [self.instanceid])
+            return Instance
