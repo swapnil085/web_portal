@@ -34,6 +34,16 @@
     <Compile Include="src\controller\login.py" />
     <Compile Include="src\controller\user.py" />
     <Compile Include="src\controller\__init__.py" />
+    <Compile Include="src\db\insert_credentials.sql">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\manage.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\model\aws.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\model\__init__.py" />
     <Compile Include="src\services\aws.py">
       <SubType>Code</SubType>
     </Compile>
@@ -50,6 +60,7 @@
     <Folder Include="src\" />
     <Folder Include="src\controller\" />
     <Folder Include="src\db\" />
+    <Folder Include="src\model\" />
     <Folder Include="src\services\" />
     <Folder Include="src\services\__pycache__\" />
     <Folder Include="src\static\" />
@@ -88,6 +99,7 @@
     <Content Include="src\static\scripts\respond.js" />
     <Content Include="src\static\scripts\respond.min.js" />
     <Content Include="src\static\scripts\_references.js" />
+    <Content Include="src\templates\aws\ec2_instances.html" />
     <Content Include="src\templates\dashboard.html" />
     <Content Include="src\templates\ec2_instances.html" />
     <Content Include="src\templates\index.html" />

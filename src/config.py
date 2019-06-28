@@ -18,3 +18,8 @@ CSRF_SESSION_KEY = 'secret'
 
 # Secret key for signing cookies
 SECRET_KEY = 'secret'
+
+# define database
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost/automation'
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False

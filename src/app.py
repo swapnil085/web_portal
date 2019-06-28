@@ -12,6 +12,11 @@ app = Flask(__name__,template_folder = TEMPLATE_DIR)
 app.config.from_object("config")
 app.secret_key = "secret"
 
+#importing models
+from model.aws import db
+db.init_app(app)
+
+
 # registering blueprints
 app.register_blueprint(auth)
 app.register_blueprint(user)

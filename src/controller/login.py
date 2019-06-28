@@ -11,7 +11,7 @@ def is_logged_in(f):
         if 'logged_in' in session:
             return f(*args, **kwargs)
         else:
-            return redirect(url_for('login_user'))
+            return redirect(url_for('.login_user'))
     return wrap
 
 
@@ -25,12 +25,10 @@ def login_user():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        print(username)
         if Login.login_user(username,password):
             l = username.split("@")
             name = l[0]
-            username = name
-            return redirect(url_for(".dashboard",username=username))
+            return redirect(url_for(".dashboard",username=name))
         else:
             return render_template("login.html")
     return render_template("login.html")
