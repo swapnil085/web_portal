@@ -25,3 +25,24 @@ class Credential(db.Model):
         cred_obj = Credential.query.filter_by(username=username).first()
         keys = [cred_obj.access_key, cred_obj.secret_key]
         return keys
+
+class Instance(db.Model):
+    __tablename__ = "instance"
+    iid = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(255), nullable=False)
+    instance_id = db.Column(db.String(255), nullable=False)
+
+    def __init__(self,username,instance_id):
+        self.username = username
+        self.instance_id = instance_id
+
+
+    @classmethod
+    def get_id_by_username(cls,username):
+        instanceId = Instance.query.filter_by(username=username).first()
+        return instanceId
+    
+    @classmethod
+    def get_username_by_instanceId(cls,instanceId):
+       uname = Instance.query.filter_by(instance_id=instanceId).first()
+       return uname
