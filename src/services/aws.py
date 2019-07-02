@@ -55,7 +55,7 @@ class Aws():
     def create_ec2_instances(cls,username):
         ec2 = cls.get_ec2_resource(username)
         print("hello")
-        instances = ec2.create_instances(ImageId="ami-00c4ae720c30116be",MinCount=1,MaxCount=1,InstanceType="t2.micro",KeyName="WinServer2012")
+        instances = ec2.create_instances(ImageId="",MinCount=1,MaxCount=1,InstanceType="",KeyName="")
         print(instances)
         #return instances
     
@@ -63,7 +63,7 @@ class Aws():
     def terminate_ec2_instance(cls,username):
         ec2 = cls.get_ec2_resource(username)
         #instances = ec2.terminate_instances(InstanceIds="i-02414a7407b7453ab")
-        instances = ec2.instances.filter(InstanceIds = ["i-02414a7407b7453ab"]).terminate()
+        instances = ec2.instances.filter(InstanceIds = [""]).terminate()
         print(instances)
 
     
