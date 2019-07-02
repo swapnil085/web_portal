@@ -100,8 +100,10 @@
     <Content Include="src\static\scripts\respond.min.js" />
     <Content Include="src\static\scripts\_references.js" />
     <Content Include="src\templates\aws\ec2_instances.html" />
+    <Content Include="src\templates\aws\test.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\templates\dashboard.html" />
-    <Content Include="src\templates\ec2_instances.html" />
     <Content Include="src\templates\index.html" />
     <Content Include="src\templates\layout.html" />
     <Content Include="src\templates\login.html" />
