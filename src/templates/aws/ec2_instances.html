@@ -1,6 +1,18 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+<head>
+    <meta charset="utf-8" />
+    <title>List of EC2 instances</title>
+</head>
+<body name >
+    <form action="http://localhost:5000/" method="post">
+        {% for i in all_instances %}
+        <p>{{i.id}}</p>
+    
+        <br />
+        {% endfor %}
+    </form>
+</body>
 <h1>Working</h1>
 </html>
