@@ -39,10 +39,20 @@ class Instance(db.Model):
 
     @classmethod
     def get_id_by_username(cls,username):
-        instanceId = Instance.query.filter_by(username=username).first()
+        instance = Instance.query.filter_by(username=username).first()
+        instanceId = instance.instance_id
         return instanceId
     
     @classmethod
     def get_username_by_instanceId(cls,instanceId):
        uname = Instance.query.filter_by(instance_id=instanceId).first()
        return uname
+
+    @classmethod
+    def add_details(cls,username,instance_id):
+       instance_obj = Instance(username=username,instance_id=instance_id)
+       try:
+           db.session.add(instance_obj)
+           db.session.commit()
+       except:
+           db.session.rollback()

@@ -34,14 +34,14 @@ def ec2_instances(username):
 @aws.route("/<username>/aws/ec2/create",methods=["GET","POST"])
 def create_ec2(username):
     print("hello")
-    Aws.create_ec2_instances(username)
-    return render_template("/aws/test.html")
+    instances = Aws.create_ec2_instances(username)
+    return render_template("/aws/test_create.html",action="created")
 
 @aws.route("/<username>/aws/ec2/terminate",methods=["GET","POST"])
 def terminate_ec2(username):
     print("hello")
     Aws.terminate_ec2_instance(username)
-    return render_template("/aws/test.html")
+    return render_template("/aws/test_terminate.html")
 
 
 

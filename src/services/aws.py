@@ -5,6 +5,7 @@ from botocore.exceptions import ClientError
 
 #import models
 from model.aws import Credential
+from model.aws import Instance
 
 class Aws():
 
@@ -55,16 +56,20 @@ class Aws():
     def create_ec2_instances(cls,username):
         ec2 = cls.get_ec2_resource(username)
         print("hello")
-        instances = ec2.create_instances(ImageId="",MinCount=1,MaxCount=1,InstanceType="",KeyName="")
+        instances = ec2.create_instances(ImageId="ami-00c4ae720c30116be",MinCount=1,MaxCount=1,InstanceType="t2.micro",KeyName="WinServer2012")
+        Instance.add_details(username,instances[0].id)
         print(instances)
-        #return instances
+        return instances
     
     @classmethod
     def terminate_ec2_instance(cls,username):
         ec2 = cls.get_ec2_resource(username)
         #instances = ec2.terminate_instances(InstanceIds="i-02414a7407b7453ab")
-        instances = ec2.instances.filter(InstanceIds = [""]).terminate()
+        instance_id = Instance.get_id_by_username(username)
+        print(instance_id)
+        instances = ec2.instances.filter(InstanceIds = [instance_id]).terminate()
         print(instances)
+        #return instances
 
     
         
