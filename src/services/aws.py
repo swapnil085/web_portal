@@ -64,10 +64,9 @@ class Aws():
     @classmethod
     def terminate_ec2_instance(cls,username):
         ec2 = cls.get_ec2_resource(username)
-        #instances = ec2.terminate_instances(InstanceIds="i-02414a7407b7453ab")
         instance_id = Instance.get_id_by_username(username)
         print(instance_id)
-        instances = ec2.instances.filter(InstanceIds = [instance_id]).terminate()
+        instances = ec2.instances.filter(InstanceIds = ["i-01840199f504be37a"]).terminate()
         print(instances)
         #return instances
 

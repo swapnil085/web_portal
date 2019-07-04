@@ -11,11 +11,8 @@ def aws_dashboard(username):
 
 @aws.route("/<username>/aws/ec2",methods=["GET","POST"])
 def ec2_instances(username):
-    if request.method == "GET":
-        all_instances = Aws.get_all_ec2_instances(username)
-        return render_template("/aws/ec2_instances.html",all_instances = all_instances)
-    
-    elif request.method == "POST":
+
+   if request.method == "POST":
         if request.form["Start"] :
             start = request.form["Start"]
             instance_id = start.split(" ")[1]
@@ -30,6 +27,9 @@ def ec2_instances(username):
             reboot = request.form["Reboot"]
             instance_id = reboot.split(" ")[1]
             Aws.reboot(instance_id,username)
+
+   all_instances = Aws.get_all_ec2_instances(username)
+   return render_template("/aws/ec2_instances.html",all_instances = all_instances)
   
 @aws.route("/<username>/aws/ec2/create",methods=["GET","POST"])
 def create_ec2(username):
