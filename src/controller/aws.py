@@ -43,29 +43,13 @@ def terminate_ec2(username):
     Aws.terminate_ec2_instance(username)
     return render_template("/aws/test_terminate.html")
 
+@aws.route("/<username>/aws/ec2/images",methods=["GET","POST"])
+def get_aws_images(username):
+    if Aws.insert_aws_images(username):
+        return "inserted"
+    else:
+        return "error while inserting!"
 
-
-
-
-
-#implement checkboxes
-#@aws.route("/<username>/aws")
-#@aws.route("/<username>/aws/ec2",methods=["post"])
-#def ec2_instances_functions(startstopinstance , username):
-#    all_instances = aws.get_all_ec2_instances(username)
-#    start = request.form["start"]
-
-#    for i in all_instances:
-#        if start=="start "+str(i.id):
-#            instanceid = i.id
-        
-#    obj = Aws(instanceid) #instanceid is passed through here
-#    if(start=="start"):
-#        obj.start();
-#    else:
-#        obj.stop();
-        
-#    return redirect("/aws/<username>/ec2")
 
 
 

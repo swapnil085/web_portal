@@ -38,21 +38,27 @@
         <table>
             <tr>
                 <th>InstanceId</th>
+                <th>Instance Type</th>
+                <th>Availability Zone</th>
                 <th>State</th>
+                <th>IPv4 Private Address</th>
                 <th>Start Instance</th>
                 <th>Stop Instance</th>
             </tr>
-            <tr>
+            <!--<tr>
                 <td></td>
                 <td></td>
                 <td><input type="submit" value="Start i-01840199f504be37a " name="Start" /></td>
                 <td><input type="submit" value="Stop i-01840199f504be37a" name="Stop" /></td>
-            </tr>
+            </tr>-->
 
                 {% for i in all_instances %}
             <tr>
                 <td>{{i.id}}</td>
+                <td>{{i.instance_type}}</td>
+                <td>{{i.placement.AvailabilityZone}}</td>
                 <td>{{i.state.Name}}</td>
+                <td>{{i.private_ip_address}}</td>
                 <td><input type="submit" value="Start {{i.id}}" name="Start" /></td>
                 <td><input type="submit" value="Stop {{i.id}}" name="Stop" /></td>
             </tr>
