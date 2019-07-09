@@ -31,7 +31,7 @@
         </style>
     </head>
     <meta charset="utf-8" />
-    <title>List of EC2 instances</title>
+    <title>Ec2</title>
 </head>
 <body name >
     <form action="http://localhost:5000/" method="post">
@@ -45,14 +45,18 @@
                 <th>Start Instance</th>
                 <th>Stop Instance</th>
             </tr>
-            <!--<tr>
-                <td></td>
-                <td></td>
-                <td><input type="submit" value="Start i-01840199f504be37a " name="Start" /></td>
-                <td><input type="submit" value="Stop i-01840199f504be37a" name="Stop" /></td>
-            </tr>-->
+            <tr>
+            
+                <td>i-050ec310f839a5322</td>
+                <td>t2.micro</td>
+                <td>us-east-2b</td>
+                <td>running</td>
+                <td>127.0.0.1</td>
+                <td><a href="/swapnil.buchke/aws/ec2/start/i-050ec310f839a5322">Start</td>
+                <td><a href="/swapnil.buchke/aws/ec2/stop/i-050ec310f839a5322">Stop</td>
+            </tr>
 
-                {% for i in all_instances %}
+                <!--{% for i in all_instances %}
             <tr>
                 <td>{{i.id}}</td>
                 <td>{{i.instance_type}}</td>
@@ -63,7 +67,7 @@
                 <td><input type="submit" value="Stop {{i.id}}" name="Stop" /></td>
             </tr>
                 <br />
-                {% endfor %}
+                {% endfor %}-->
             </table>    
     </form>
 </body>

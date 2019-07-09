@@ -9,33 +9,38 @@ aws = Blueprint("aws",__name__,template_folder="../templates/aws")
 def aws_dashboard(username):
     return render_template("/aws/dashboard.html",username=username)
 
-@aws.route("/<username>/aws/ec2",methods=["GET","POST"])
-def ec2_instances(username):
+@aws.route("/<username>/aws/ec2",methods=["GET"])
+def show_instances(username):
+    #all_instances = Aws.get_all_ec2_instances(username)
+    return render_template("/aws/ec2_instances.html")
 
-   if request.method == "POST":
-        if request.form["Start"] :
-            start = request.form["Start"]
-            instance_id = start.split(" ")[1]
-            Aws.start(instance_id,username)
+@aws.route("/<username>/aws/ec2/start/<instance_id>",methods=["POST"])
+def start_instances(username,instance_id):
 
-        elif request.form["Stop"]:
-            stop = request.form["Stop"]
-            instance_id = stop.split(" ")[1]
-            Aws.stop(instance_id,username)
+    print("start api")
+    if Aws.start(instance_id,username):
+        return "started"
+    else:
+        return "error starting"
 
-        elif request.form["Reboot"]:
-            reboot = request.form["Reboot"]
-            instance_id = reboot.split(" ")[1]
-            Aws.reboot(instance_id,username)
+@aws.route("/<username>/aws/ec2/stop/<instance_id>",methods=["POST"])
+def stop_instances(username,instance_id):
 
-   all_instances = Aws.get_all_ec2_instances(username)
-   return render_template("/aws/ec2_instances.html",all_instances = all_instances)
+    print("stop api")
+    if Aws.stop(instance_id,username):
+        return "stopped"
+    else:
+        return "error stopping"
   
-@aws.route("/<username>/aws/ec2/create",methods=["GET","POST"])
-def create_ec2(username):
+@aws.route("/<username>/aws/ec2/create",methods=["GET"])
+def create(username):
+    return render_template("/aws/test_create.html",action="created")
+
+@aws.route("/<username>/aws/ec2/create",methods=["POST"])
+def create_ec2_instance(username):
     print("hello")
     instances = Aws.create_ec2_instances(username)
-    return render_template("/aws/test_create.html",action="created")
+    return
 
 @aws.route("/<username>/aws/ec2/terminate",methods=["GET","POST"])
 def terminate_ec2(username):
@@ -43,7 +48,7 @@ def terminate_ec2(username):
     Aws.terminate_ec2_instance(username)
     return render_template("/aws/test_terminate.html")
 
-@aws.route("/<username>/aws/ec2/images",methods=["GET","POST"])
+@aws.route("/<username>/aws/ec2/ami",methods=["GET","POST"])
 def get_aws_images(username):
     if Aws.insert_aws_images(username):
         return "inserted"

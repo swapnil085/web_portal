@@ -109,6 +109,15 @@ class InstanceDetail(db.Model):
         except:
             return False
 
+    @classmethod
+    def update_instance_detail(cls,instance):
+        try:
+            db.session.commit()
+            return True
+        except:
+            db.session.rollback()
+            return False
+
 class ImageDetail(db.Model):
     __tablename__ = "image_detail"
     id = db.Column(db.Integer, primary_key=True)
@@ -117,13 +126,17 @@ class ImageDetail(db.Model):
     public = db.Column(db.Boolean, nullable = False, default = True)
     state = db.Column(db.Enum('pending','available','invalid','deregistered','transient','failed','error'),default='available')
     name = db.Column(db.String(255))
+    architecture = db.Column(db.String(255),nullable=False)
+    platform = db.Column(db.String(255),nullable=False)
 
-    def __init__(self, image_id, location, public, state, name):
+    def __init__(self, image_id, location, public, state, name, architecture,platform):
         self.image_id = image_id
         self.location = location
         self.public = public 
         self.state = state
         self.name = name
+        self.architecture = architecture
+        self.platform = platform
 
     @classmethod
     def add_image_detail(cls,image_obj):

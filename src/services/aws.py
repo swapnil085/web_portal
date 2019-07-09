@@ -2,6 +2,8 @@ from flask import flash, session
 import os
 import boto3
 from botocore.exceptions import ClientError
+from datetime import datetime
+from dateutil.parser import parse
 
 #import models
 from model.aws import Credential
@@ -53,13 +55,28 @@ class Aws():
 
     @classmethod
     def start(cls,instance_id,username):
-        ec2 = cls.get_ec2_resource(username)
-        response = ec2.start_instances(InstanceIds=[instance_id],DryRun=False)
+        #ec2 = cls.get_ec2_resource(username)
+        #response = ec2.start_instances(InstanceIds=[instance_id],DryRun=False)
+        instance = InstanceDetail.query.filter_by(instance_id=instance_id).first()
+        if instance.state != "running":
+            instance.state = "running"
+        if InstanceDetail.update_instance_detail(instance):
+            return True
+        else:
+            return False
+        print("start instance")
 
     @classmethod
     def stop(cls,instance_id,username):
-        ec2 = cls.get_ec2_resource(username)
-        response = ec2.stop_instances(InstanceIds=[instance_id],DryRun=False)
+        #ec2 = cls.get_ec2_resource(username)
+        #response = ec2.stop_instances(InstanceIds=[instance_id],DryRun=False)
+        instance = InstanceDetail.query.filter_by(instance_id=instance_id).first()
+        if instance.state != "stopped":
+            instance.state = "stopped"
+        if InstanceDetail.update_instance_detail(instance):
+            return True
+        else:
+            return False
 
     @classmethod
     def reboot(cls,instance_id,username):
@@ -95,20 +112,25 @@ class Aws():
     @classmethod
     def insert_aws_images(cls,username):
         client = cls.get_ec2_client(username)
-        images = client.describe_images()
+        images = client.describe_images(Filters=[{'Name':'platform','Values':['windows']}])
         flag = False
-        for i in range(100):
-            image_id = images["Images"][i]["ImageId"]
-            location = images['Images'][i]['ImageLocation']
-            state = images['Images'][i]['State']
-            public = images['Images'][i]['Public']
-            name = images['Images'][i]['Name']
-            image_obj = ImageDetail(image_id,location,public,state,name)
+        for i in range(20):
+            date = parse(images["Images"][i]["CreationDate"])
+            if date.year >= 2016:
+                image_id = images["Images"][i]["ImageId"]
+                location = images['Images'][i]['ImageLocation']
+                state = images['Images'][i]['State']
+                public = images['Images'][i]['Public']
+                name = images['Images'][i]['Name']
+                architecture = images['Images'][i]['Architecture']
+                platform = images['Images'][i]['Platform']
+                print(architecture)
+                image_obj = ImageDetail(image_id,location,public,state,name,architecture,platform)
 
-            if ImageDetail.add_image_detail(image_obj):
-                flag = True
-            else:
-                flag = False
+                if ImageDetail.add_image_detail(image_obj):
+                    flag = True
+                else:
+                    flag = False
 
         if flag == True:
             return True
