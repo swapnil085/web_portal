@@ -38,8 +38,8 @@ def create(username):
 
 @aws.route("/<username>/aws/ec2/create",methods=["POST"])
 def create_ec2_instance(username):
-    print("hello")
-    instances = Aws.create_ec2_instances(username)
+    dict = request.get_json()                                                   #getting the parameters to create the instance
+    instances = Aws.create_ec2_instances(username,dict)
     return
 
 @aws.route("/<username>/aws/ec2/terminate",methods=["GET","POST"])

@@ -60,6 +60,7 @@ class Aws():
         instance = InstanceDetail.query.filter_by(instance_id=instance_id).first()
         if instance.state != "running":
             instance.state = "running"
+            instance.updated_by = username
         if InstanceDetail.update_instance_detail(instance):
             return True
         else:
@@ -73,6 +74,7 @@ class Aws():
         instance = InstanceDetail.query.filter_by(instance_id=instance_id).first()
         if instance.state != "stopped":
             instance.state = "stopped"
+            instance.updated_by = "karthik.p"
         if InstanceDetail.update_instance_detail(instance):
             return True
         else:
@@ -84,16 +86,16 @@ class Aws():
         response = ec2.reboot_instances(InstanceIds=[instance_id],DryRun=False)
 
     @classmethod
-    def create_ec2_instances(cls,username):
+    def create_ec2_instances(cls,username,dict):
         #ec2 = cls.get_ec2_resource(username)
         print("hello")
         #instances = ec2.create_instances(ImageId="ami-00c4ae720c30116be",MinCount=1,MaxCount=1,InstanceType="t2.micro",KeyName="WinServer2012")
         instance_id = "i-0ba1786587be36bed"
-        image_id = "ami-00c4ae720c30116be"
-        instance_type = "t2.micro"
-        zone = "us-east-2b"
-        state = "running"
-        key_name = "WinServer2012"
+        image_id = dict["image_id"]
+        instance_type = dict["instance_type"]
+        zone = dict["zone"]
+        state = dict["state"]
+        key_name = dict["key_name"]
         created_by = username
         updated_by = username
         InstanceDetail.add_instance_details(instance_id,image_id, instance_type, zone, state, key_name, created_by, updated_by)
