@@ -43,6 +43,11 @@ def login_user():
             return redirect(url_for(".dashboard",username=name))
         else:
             return render_template("login.html")
+    else:
+        if session:
+            if session.get("logged_in"):
+                username = session["username"]
+                return redirect(url_for(".dashboard",username=username))
     return render_template("login.html")
 
 

@@ -50,13 +50,15 @@ class Aws():
     def get_all_ec2_instances(cls,username):
         ec2 = cls.get_ec2_resource(username)
         instance_list = ec2.instances.all()
-        #add to instance_detail table
         for i in ec2.instances.all():
             #instance_obj = InstanceDetail(instance_id=i.id, image_id=i.image_id, instance_type=i.instance_type, zone=i.placement["AvailabilityZone"], state=i.state, key_name=i.key_name)
             ##print(i.instance_id,i.image_id)
             #InstanceDetail.add_instance_details(instance_obj)
             InstanceDetail.add_instance_details(i.instance_id,i.image_id,i.instance_type,i.placement["AvailabilityZone"],i.state["Name"],i.key_name)
         return instance_list
+        #list = InstanceDetail.query.all()
+        #print(list[0].instance_id,"hello")
+        #return list
 
     @classmethod
     def start(cls,instance_id,username):
@@ -95,12 +97,13 @@ class Aws():
         ec2 = cls.get_ec2_resource(username)
         print("hello")
         #instances = ec2.create_instances(ImageId="ami-00c4ae720c30116be",MinCount=1,MaxCount=1,InstanceType="t2.micro",KeyName="WinServer2012")
-        instance_id = "i-0ba1786587be36bed"
+        instance_id = "i-0ba1786587be27abc"
         image_id = dict["image_id"]
         instance_type = dict["instance_type"]
         zone = dict["zone"]
         state = dict["state"]
-        key_name = cls.get_key_pair(client,"key"+str(datetime.now()))
+        #key_name = cls.get_key_pair(client,"key"+str(datetime.now()))
+        key_name = "Swapnil123"
         created_by = username
         updated_by = username
         InstanceDetail.add_instance_details(instance_id,image_id, instance_type, zone, state, key_name, created_by, updated_by)

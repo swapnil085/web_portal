@@ -1,115 +1,105 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Sonata LandingPage</title>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="plus, html5, css3, template, ecommerce, e-commerce, bootstrap, responsive, creative" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="static/css/custom.css" />
-  </head>
-  <body>
-    <header>
-      <div class="topBar">
-        <div class="container-fluid topRibbon">
-          <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-3 pull-left">
-              <ul class="list-inline pull-left pl0">
-                <li>
-                  <img src="images/logo.png" width="130px" alt="logo">
-                </li>
-              </ul>
+﻿    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <title>LandingPage</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="plus, html5, css3, template, ecommerce, e-commerce, bootstrap, responsive, creative" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="static/css/custom.css" />
+      </head>
+      <body>
+        <header>
+          <div class="topBar">
+            <div class="container-fluid topRibbon">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-3 pull-left">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-9 pull-right login-details">
+                  <ul class="topBarNav">
+                    <li class="active-link">
+                      <a href="/login">Login</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="col-md-8 col-sm-8 col-xs-9 pull-right login-details">
-              <ul class="topBarNav">
-                <li>
-                  <img class="img-responsive" src="images/Message Box.svg" alt="Message Box" />
-                </li>
-                <li>
-                  <img class="img-responsive" src="images/Settings.svg" alt="Settings" />
-                </li>
-                <li class="active-link">
-                  <a href="#">Home</a>
-                </li>
-                <li class="navbar-text">
-                  <span>Sushant Rao</span> <img class="img-responsive img-dropdown" src="images/Name Dropdown.svg" alt="Dropdown" />
-                </li>
-                <li class="logout-text">
-                  <span>LOGOUT</span><img class="img-responsive" src="images/More.svg" alt="More" />
-                </li>
-              </ul>
-            </div>
+            <!-- end container -->
           </div>
-        </div>
-        <!-- end container -->
-      </div>
-      <!-- topBar -->
-    </header>
-    <section>
-      <div class="body-wrapper">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-4 left-panel">
-              <div>
-                <h4><b>What is PPC?</b></h4>
-                <p class="ppc-content">PPC stands for <b>Peripheral DMZ Cloud</b>. It is a multi-cloud hybrid Infrastructure which supports secure hosting of  Demo / POC and  Enterprise Applications. Hosting will be on public cloud platform such as AWS and Microsoft Azure.</p>
-              </div>
-              <div id="microsoft-azure" onclick="activeFunction(this.id)" class="activecolor leftdiv">
-                <div class="title-head">
-                  <a class="icon-container" href="#">
-                  <img class="maz-img" src="images/Azure cloud.svg" alt="Azure cloud"/>
-                  </a>
-                  <a class="sub-title" href="#"><b>Microsoft Azure cloud</b></a>
+          <!-- topBar -->
+        </header>
+        <section>
+          <div class="body-wrapper">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 left-panel">
+                  <div>
+                    <h4><b>Cloud Automation?</b></h4>
+                    <p class="ppc-content">Multi-cloud hybrid Infrastructure which supports secure hosting of Enterprise Applications. Hosting will be on public cloud platform such as AWS and Microsoft Azure and Google Cloud.</p>
+                  </div>
+                  <div id="microsoft-azure" onclick="activeFunction(this.id)" class="activecolor leftdiv">
+                    <div class="title-head">
+                      <a class="icon-container" href="#">
+                      <!--<img class="maz-img" src="images/Azure cloud.svg" alt="Azure cloud"/>-->
+                      </a>
+                      <a class="sub-title" href="#"><b>Microsoft Azure cloud</b></a>
+                    </div>
+                    <p>Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through a global network of Microsoft-managed data centers.
+                      <br/>Refer Link for more details -
+                      <a href="https://azure.microsoft.com/en-in/overview/what-is-azure/" class="refer-link">https://azure.microsoft.com/en-in/overview/what-is-azure/</a>
+                    </p>
+                  </div>
+                  <div id="aws" onclick="activeFunction(this.id)" class="leftdiv mt25">
+                    <div class="title-head">
+                      <a class="icon-container" href="#">
+                         <!-- <img class="amz-img" src="images/Amazon cloud.svg" alt="Amazon Cloud"/> -->
+                         <object data="images/Amazon cloud.svg" type="image/svg+xml"></object>
+                      </a>
+                      <a class="sub-title" href="#"><b>Amazon web services cloud</b></a>
+                    </div>
+                    <p>
+                      Amazon AWS is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through a global network of Amazon-managed data centers.<br /> More details on AWS, refer link -
+                      <a href="https://aws.amazon.com/what-is-aws/" class="refer-link">https://aws.amazon.com/what-is-aws/</a>
+                    </p>
+                  </div>
+                  <div id="google-cloud" onclick="activeFunction(this.id)" class="leftdiv mt25">
+                    <div class="title-head">
+                      <a class="icon-container" href="#">
+                      <!-- <img class="gc-img" src="images/Google cloud.svg" alt="Google Cloud"/> -->
+                      <object data="images/Google cloud.svg" type="image/svg+xml"></object>
+                      </a>
+                      <a class="sub-title" href="#"><b>Google cloud</b></a>
+                    </div>
+                    <p>
+                      Google Cloud Platform, offered by Google, is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search and YouTube. Alongside a set of management tools, it provides a series of modular clous services including computing, data storage, data analytics and machine learning. Google Cloud Platform provides laaS, PaaS, and Serverless computing environments. More details on GCP, refer link -
+                      <a href="https://cloud.google.com/docs/overview/" class="refer-link">https://cloud.google.com/docs/overview/</a>
+                    </p>
+                  </div>
                 </div>
-                <p>Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through a global network of Microsoft-managed data centers.
-                  <br/>Refer Link for more details -
-                  <a href="https://azure.microsoft.com/en-in/overview/what-is-azure/" class="refer-link">https://azure.microsoft.com/en-in/overview/what-is-azure/</a>
-                </p>
-              </div>
-              <div id="aws" onclick="activeFunction(this.id)" class="leftdiv mt25">
-                <div class="title-head">
-                  <a class="icon-container" href="#">
-                     <!-- <img class="amz-img" src="images/Amazon cloud.svg" alt="Amazon Cloud"/> -->
-                     <object data="images/Amazon cloud.svg" type="image/svg+xml"></object>
-                  </a>
-                  <a class="sub-title" href="#"><b>Amazon web services cloud</b></a>
+                <!-- end col -->
+                <div class="col-md-8 right-panel">
+                    <div class="login-details" align=center>
+                        <label>Email : </label>
+                        <input type="text" name="username" class="form-control" value={{request.form.username}}>
+                    </div><br>
+                    <div class="login-details" align=center>
+                        <label>Password : </label>
+                        <input type="password" name="password" class="form-control" value={{request.form.password}}>
+                    </div><br>
+                    <p align="center">
+                        <button type="submit" class="btn btn-primary" align=center>Submit</button><br><br>
+                        <button type="button" class="btn btn-info btn-lg btn-pink btn-next" data-toggle="modal" data-target="#termsModal">Next</button>
                 </div>
-                <p>
-                  Amazon AWS is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through a global network of Amazon-managed data centers.<br /> More details on AWS, refer link -
-                  <a href="https://aws.amazon.com/what-is-aws/" class="refer-link">https://aws.amazon.com/what-is-aws/</a>
-                </p>
+                <!-- end col -->
               </div>
-              <div id="google-cloud" onclick="activeFunction(this.id)" class="leftdiv mt25">
-                <div class="title-head">
-                  <a class="icon-container" href="#">
-                  <!-- <img class="gc-img" src="images/Google cloud.svg" alt="Google Cloud"/> -->
-                  <object data="images/Google cloud.svg" type="image/svg+xml"></object>
-                  </a>
-                  <a class="sub-title" href="#"><b>Google cloud</b></a>
-                </div>
-                <p>
-                  Google Cloud Platform, offered by Google, is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search and YouTube. Alongside a set of management tools, it provides a series of modular clous services including computing, data storage, data analytics and machine learning. Google Cloud Platform provides laaS, PaaS, and Serverless computing environments. More details on GCP, refer link -
-                  <a href="https://cloud.google.com/docs/overview/" class="refer-link">https://cloud.google.com/docs/overview/</a>
-                </p>
-              </div>
+              <!-- end row -->
             </div>
-            <!-- end col -->
-            <div class="col-md-8 right-panel">
-              <div class="video-container">
-                    <img class="img-responsive video-wrapper" src="images/video.png" alt="Video" />
-                </div>
-                  <button type="button" class="btn btn-info btn-lg btn-pink btn-next" data-toggle="modal" data-target="#termsModal">Next</button>
-            </div>
-            <!-- end col -->
+            <!-- end container-fluid -->
           </div>
-          <!-- end row -->
-        </div>
-        <!-- end container-fluid -->
-      </div>
-      <!-- end body-wrapper -->
-    </section>
-  </body>
-</html>
+          <!-- end body-wrapper -->
+        </section>
+      </body>
+    </html>
