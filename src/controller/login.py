@@ -5,6 +5,14 @@ from functools import wraps
 
 auth = Blueprint("user_login", __name__ , template_folder="../templates")
 
+@auth.errorhandler(404) 
+  
+# inbuilt function which takes error as parameter 
+def not_found(e): 
+  
+# defining function 
+  return render_template("404.html") 
+
 def is_logged_in(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -18,7 +26,11 @@ def is_logged_in(f):
 @auth.route("/",methods=["GET"])
 @auth.route("/home",methods=["GET"])
 def index():
-    return render_template("index.html")
+    if session:
+        if session.get("logged_in"):
+            username = session["username"]
+            return redirect(url_for(".dashboard",username=username))
+    return render_template("LandingPage.html")
 
 @auth.route("/login",methods=["GET","POST"])
 def login_user():
@@ -43,4 +55,4 @@ def dashboard(username):
 @is_logged_in
 def logout():
     session.clear()
-    return redirect(url_for("index"))
+    return redirect(url_for(".login_user"))

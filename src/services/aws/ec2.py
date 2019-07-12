@@ -6,10 +6,10 @@ from datetime import datetime
 from dateutil.parser import parse
 
 #import models
-from model.aws import Credential
-from model.aws import Instance
-from model.aws import InstanceDetail
-from model.aws import ImageDetail
+from model.aws.ec2 import Credential
+from model.aws.ec2 import Instance
+from model.aws.ec2 import InstanceDetail
+from model.aws.ec2 import ImageDetail
 
 class Aws():
 
@@ -40,6 +40,11 @@ class Aws():
         session = cls.get_session(username)
         ec2 = session.resource("ec2")
         return ec2
+
+    @classmethod
+    def get_key_pair(client,key_name):
+        key_pair_name = client.create_key_pair(KeyName=key_name)
+        return key_pair_name
 
     @classmethod
     def get_all_ec2_instances(cls,username):
@@ -87,7 +92,7 @@ class Aws():
 
     @classmethod
     def create_ec2_instances(cls,username,dict):
-        #ec2 = cls.get_ec2_resource(username)
+        ec2 = cls.get_ec2_resource(username)
         print("hello")
         #instances = ec2.create_instances(ImageId="ami-00c4ae720c30116be",MinCount=1,MaxCount=1,InstanceType="t2.micro",KeyName="WinServer2012")
         instance_id = "i-0ba1786587be36bed"
@@ -95,7 +100,7 @@ class Aws():
         instance_type = dict["instance_type"]
         zone = dict["zone"]
         state = dict["state"]
-        key_name = dict["key_name"]
+        key_name = cls.get_key_pair(client,"key"+str(datetime.now()))
         created_by = username
         updated_by = username
         InstanceDetail.add_instance_details(instance_id,image_id, instance_type, zone, state, key_name, created_by, updated_by)

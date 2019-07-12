@@ -1,0 +1,85 @@
+ Thursday, 11 July 2019 4:56 PM
+<!DOCTYPE html>
+
+<html lang="en" xmlns="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body name>
+    <form action="http://localhost:5000/{{username}}/aws/cloudwatch/metrics" method="post">
+        <input type="text" name="InstanceID" value="{{InstanceID}}" />
+        <p>
+            <label>Select Metric</label>
+            <select name="metric_name">
+                <option value="CPUUtilization">CPUUtilization</option>
+                <option value="NetworkIn">NetworkIn</option>
+                <option value="NetworkOut">NetworkOut</option>
+                <option value="NetworkPacketsIn">NetworkPacketsIn</option>
+                <option value="NetworkPacketsOut">NetworkPacketsOut</option>
+                <option value="DiskWriteBytes">DiskWriteBytes</option>
+                <option value="DiskReadBytes">DiskReadBytes</option>
+                <option value="DiskWriteOps">DiskWriteOps</option>
+                <option value="DiskReadOps">DiskReadOps</option>
+                <option value="CPUCreditBalance">CPUCreditBalance</option>
+                <option value="CPUCreditUsage">CPUCreditUsage</option>
+                <option value="StatusCheckFailed">StatusCheckFailed</option>
+                <option value="StatusCheckFailed_Instance">StatusCheckFailed_Instance</option>
+                <option value="StatusCheckFailed_System">StatusCheckFailed_System</option>
+            </select>
+        </p>
+        <input type="text" name="startdate" placeholder="startdate" value="" />
+        <input type="text" name="startmonth" placeholder="startmonth" value="" />
+        <input type="text" name="startyear" placeholder="startyear" value="" />
+        <input type="text" name="enddate" placeholder="enddate" value="" />
+        <input type="text" name="endmonth" placeholder="endmonth" value="" />
+        <input type="text" name="endyear" placeholder="endyear" value="" />
+        <input type="text" name="Period" placeholder="Period in minutes" value="" />
+
+        <p>
+            <label>Select Statistics</label>
+            <select name="Statistics">
+                <option value="SampleCount">SampleCount</option>
+                <option value="Average">Average</option>
+                <option value="Sum">Sum</option>
+                <option value="Minimum">Minimum</option>
+                <option value="Maximum">Maximum</option>
+            </select>
+        </p>
+
+        <p>
+            <label>Select Unit</label>
+            <select name="Unit">
+                <option value="Seconds">Seconds</option>
+                <option value="Microseconds">Microseconds</option>
+                <option value="Milliseconds">Milliseconds</option>
+                <option value="Bytes">Bytes</option>
+                <option value="Kilobytes">Kilobytes</option>
+                <option value="Megabytes">Megabytes</option>
+                <option value="Gigabytes">Gigabytes</option>
+                <option value="Terabytes">Terabytes</option>
+                <option value="Bits">Bits</option>
+                <option value="Kilobits">Kilobits</option>
+                <option value="Megabits">Megabits</option>
+                <option value="Gigabits">Gigabits</option>
+                <option value="Terabits">Terabits</option>
+                <option value="Percent">Percent</option>
+                <option value="Count">Count</option>
+                <option value="Bytes/Second">Bytes/Second</option>
+                <option value="Kilobytes/Second">Kilobytes/Second</option>
+                <option value="Megabytes/Second">Megabytes/Second</option>
+                <option value="Gigabytes/Second">Gigabytes/Second</option>
+                <option value="Terabytes/Second">Terabytes/Second</option>
+                <option value="Bits/Second">Bits/Second</option>
+                <option value="Kilobits/Second">Kilobits/Second</option>
+                <option value="Megabits/Second">Megabits/Second</option>
+                <option value="Gigabits/Second">Gigabits/Second</option>
+                <option value="Terabits/Second">Terabits/Second</option>
+                <option value="Count/Second">Count/Second</option>
+                <option value="None">None</option>
+            </select>
+        </p>
+        <input href="/{{username}}/aws/cloudwatch/metrics" type="submit" name="submit" value="submit" />
+    </form>
+</body>
+</html>

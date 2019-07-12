@@ -1,0 +1,200 @@
+﻿Body
+{
+    width:100%; 
+	background-color: #0e5196; TEXT-ALIGN: center;margin:0;padding:0;
+} 
+
+.color
+{
+	color:#EDF5F7;
+	font-weight:400;
+}
+
+.subtitle
+{
+	font-family: VerdanaMenu;
+	color:#003468;
+	font-size:larger; 
+}
+ 
+.label
+{
+	vertical-align: middle;
+	color:#636979; 
+	height:55px;
+	width:75%;
+	font-size:12px;
+	font-family:Verdana; 	
+	font-weight:bold;
+}
+
+.subtitle
+{
+    font-family: Verdana;
+    color: #003468;
+    font-size: larger;
+}
+ 
+	
+.SearchCriteria
+{
+    font-family: Verdana; width: 125px;font-size: 9pt;font-weight: normal;color: #636979;text-decoration: none;border: 1px solid #708090;
+}
+
+.Header {  
+    color:#806D69;   
+    width: 100%; 
+    height :20%; 
+    border-color:#BDBDBD ;
+    background-color: #BDBDBD;
+    text-align-last:left; 
+    border-collapse:separate; 
+    background: #BDBDBD url(../../Images/Header.png) repeat-x top;
+
+}   
+.Menu {  
+    width: 100%;   
+    color:#636979;   
+    background: #BDBDBD ;
+    background: #0e5196 url(../../Images/Header.png) repeat-x top;
+    text-align-last:left; 
+    border-collapse:separate;
+    height:20px; 
+}   
+.LinkButton {	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #e03535;  padding-right:12px; LINE-HEIGHT: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none ; TEXT-ALIGN: left}
+
+.userTitle{ font-family: Verdana; font-size: 8pt;font-weight: bold;color: #636979;text-decoration: none;}
+
+.GridviewDiv
+ {font-size: 100%; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helevetica, sans-serif; color: #303933;}
+.headerstyle
+{ color:#FFFFFF;border-right-color:#abb079;border-bottom-color:#abb079;background-color: #df5015;padding:0.5em 0.5em 0.5em 0.5em;text-align:center;}
+
+ /* GridView for View Urls */
+.Grid {    
+    width: 99%;   
+    background: #D4D8DA url(../../Images/Grid_Menu.png) repeat-x top;
+    margin: 5px 0 10px 0;    
+    border: solid 1px #E4e5e5;    
+    border-collapse:separate; 
+} 
+
+.Grid th
+{
+	padding: 4px 2px;
+	padding: 4px 2px;
+	color: #016DAE;
+	background: #C0C7CB url(../../Images/Grid_Menu.png) repeat-x top;
+	border-left: solid 1px  #E4e5e5;
+    border-right: solid 1px  #E4e5e5;
+    border-bottom: solid 1px  #E4e5e5;
+	border-top: solid 1px  #E4e5e5;
+	font-size: 0.7em;
+	height:23px;
+	font-family:Verdana;
+	font-weight:bold;
+} 
+
+.Grid td {    
+    padding: 2px; 
+    color:#016DAE;  
+	font-size:12px;
+	font-weight:normal;
+	font-family:Verdana;
+	border-width:1px;   
+}  
+
+.Alt  
+{ 
+    padding: 2px; 
+    color:AppWorkspace;
+    background: #016DAE url(../../Images/Grid_Menu.png) repeat-x top;
+    font-size: 12px;
+    height: auto;
+    font-family: Verdana;
+    font-weight:normal;
+}  
+
+
+
+
+.GridView
+{
+     border-color: #636979;
+}
+/*Gridview End */
+.GridView th
+{
+     border-color: #3AC0F2;
+
+}
+
+.GridView td 
+{
+     border-color: #3AC0F2;
+
+
+}
+.Tr_Light_Row       
+{
+	background-color:#9C9A9C;
+}
+
+.f2Master
+{
+	FONT-SIZE: 11px; 
+	COLOR: #ff006e; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration:none;
+}
+ 
+.f2 
+{
+	FONT-SIZE: 11px; COLOR: #003468; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.f1 
+{
+	FONT-SIZE: 10px; COLOR: #003468; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+
+
+.textbox		{font-family: Verdana; font-size: 9pt;font-weight: normal;  color: #000000;background-color:#FFFFFF;text-decoration: none;border: 1px solid #BDBDBD;}
+
+.smalltextbox		{font-family: Verdana;height:15px; font-size: 8pt;font-weight: normal;color: #000000;text-decoration: none ;border: 1px solid #BDBDBD;}
+
+.MultiLinetextbox		{font-family: Verdana; font-size: 9pt;font-weight: normal;color: #000000;text-decoration: none;border: 1px solid #BDBDBD; overflow : hidden;}
+.button {font-family: Verdana;font-size: 9pt;font-weight: normal;color: #E4e5e5; height:24px; text-decoration: none;border: 1px solid #636979;background-color:#003468;cursor:pointer}
+
+.MessageTextStyle{font-family: Verdana; font-size: 11px; font-weight: normal; color:#636979 ; text-align: center;}
+.warningResponse
+{
+	border-color: #cccc99;
+	background-color: #E4e5e5;
+	color: Red;
+	font-size:80%;	
+}
+.err { 
+	color: red ; 
+	font-family: Verdana
+}
+.lblMessageTextStyle {font-family: Verdana;font-size: 10pt;font-weight: normal; color: #000000; text-decoration: none;}
+
+ 
+
+.labelfooter
+{
+    padding-left: 7px;
+    font-family: Verdana;
+    color: Gray;
+    font-size: 10px;
+}
+
+.Privacylink
+{
+    padding-left: 7px;
+    font-family: Verdana;
+    font-size: 10px;
+    color: Gray;
+    text-decoration: Underline;
+}

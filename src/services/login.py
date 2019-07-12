@@ -10,6 +10,7 @@ class Login():
         conn = Connection(server,user=username,password=password)
         if conn.bind() == True:
             session["logged_in"] = True
+            session["username"] = username.split("@")[0]
             return True
         else:
             return False
