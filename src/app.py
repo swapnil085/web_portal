@@ -6,6 +6,7 @@ import os
 from controller.login import auth
 from controller.user import user
 from controller.aws.ec2 import aws_ec2
+from controller.aws.cloudwatch import cloudwatch
 
 TEMPLATE_DIR = os.path.abspath('/templates')
 app = Flask(__name__,template_folder = TEMPLATE_DIR)
@@ -21,6 +22,8 @@ db.init_app(app)
 app.register_blueprint(auth)
 app.register_blueprint(user)
 app.register_blueprint(aws_ec2)
+app.register_blueprint(cloudwatch)
+
 
 @app.route("/",methods=["GET"])
 @app.route("/home",methods=["GET"])

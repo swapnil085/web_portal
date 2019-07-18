@@ -68,11 +68,8 @@ class Aws():
         if instance.state != "running":
             instance.state = "running"
             instance.updated_by = username
-        if InstanceDetail.update_instance_detail(instance):
-            return True
-        else:
-            return False
-        print("start instance")
+        d = InstanceDetail.update_instance_detail(instance)
+        return d
 
     @classmethod
     def stop(cls,instance_id,username):
@@ -82,10 +79,8 @@ class Aws():
         if instance.state != "stopped":
             instance.state = "stopped"
             instance.updated_by = "karthik.p"
-        if InstanceDetail.update_instance_detail(instance):
-            return True
-        else:
-            return False
+        d =  InstanceDetail.update_instance_detail(instance)
+        return d
 
     @classmethod
     def reboot(cls,instance_id,username):

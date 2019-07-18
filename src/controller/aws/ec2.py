@@ -1,7 +1,11 @@
 from flask import Blueprint, render_template, abort,request, redirect, url_for,session
 from jinja2 import TemplateNotFound
-from services.aws.ec2 import Aws
+
 from functools import wraps
+from flask import jsonify,json
+
+#importing services
+from services.aws.ec2 import Aws
 
 aws_ec2 = Blueprint("aws_ec2",__name__,template_folder="../templates/aws/ec2")
 
@@ -18,19 +22,19 @@ def show_instances(username):
 def start_instances(username,instance_id):
 
     print("start api")
-    if Aws.start(instance_id,username):
-        return "started"
-    else:
-        return "error starting"
+    instance_dict = Aws.start(instance_id,username)
+    instance_json = json.dumps(instance_dict)
+    #instance_json = jsonify(instance_json)
+    #print(type(instance_json))
+       
+    return jsonify(instance_json)
 
 @aws_ec2.route("/<username>/aws/ec2/stop/<instance_id>",methods=["POST"])
 def stop_instances(username,instance_id):
-
     print("stop api")
-    if Aws.stop(instance_id,username):
-        return "stopped"
-    else:
-        return "error stopping"
+    instance_dict = Aws.stop(instance_id,username)
+    instance_json = json.dumps(instance_dict)
+    return instance_json
   
 @aws_ec2.route("/<username>/aws/ec2/create",methods=["GET"])
 def create(username):

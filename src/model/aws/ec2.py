@@ -81,6 +81,21 @@ class InstanceDetail(db.Model):
         self.updated_by = updated_by
 
     @classmethod
+    def class_to_dict(cls,obj):
+        d=dict()
+        d = {
+                "instance_id":obj.instance_id,
+                "image_id":obj.image_id,
+                "instance_type":obj.instance_type,
+                "zone":obj.zone,
+                "state":obj.state,
+                "key_name":obj.key_name,\
+                "created_by":obj.created_by,
+                "updated_by":obj.updated_by
+            }
+        return d
+
+    @classmethod
     def add_instance_details(cls,instance_id,image_id,instance_type,zone,state,key_name,created_by,updated_by):
         obj = InstanceDetail(instance_id=instance_id, image_id=image_id, instance_type=instance_type, zone=zone, state=state, key_name=key_name, created_by=created_by, updated_by=updated_by)
         try:
@@ -113,7 +128,9 @@ class InstanceDetail(db.Model):
     def update_instance_detail(cls,instance):
         try:
             db.session.commit()
-            return True
+            d = InstanceDetail.class_to_dict(instance)
+            print(d)
+            return d
         except:
             db.session.rollback()
             return False
