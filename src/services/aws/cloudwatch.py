@@ -27,6 +27,6 @@ class CloudWatch():
 
     def get_instance_metric(self):
         client = self.get_cloudwatch_client()
-        response = client.get_metric_statistics(MetricName='DiskSpaceUtilization',Dimensions=[{'Name':'InstanceId','Value':self.instance_id}])
+        response = client.get_metric_statistics(MetricName='CPUUtilization',Dimensions=[{'Name':'InstanceId','Value':self.instance_id}])
         return response
 

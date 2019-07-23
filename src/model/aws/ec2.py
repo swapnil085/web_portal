@@ -165,3 +165,10 @@ class ImageDetail(db.Model):
             db.session.rollback()
             return False
 
+    @classmethod
+    def get_image_by_location(cls,location):
+        try:
+            images = ImageDetail.query.filter(location=location).all()
+            return images
+        except:
+            return []
