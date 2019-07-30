@@ -30,7 +30,7 @@ def index():
         if session.get("logged_in"):
             username = session["username"]
             return redirect(url_for(".dashboard",username=username))
-    return render_template("LandingPage.html")
+    return redirect("/login")
 
 @auth.route("/login",methods=["GET","POST"])
 def login_user():

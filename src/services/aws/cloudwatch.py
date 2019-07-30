@@ -4,12 +4,16 @@ import boto3
 from botocore.exceptions import ClientError
 from datetime import datetime
 from dateutil.parser import parse
+from elasticsearch import Elasticsearch
 
-#import models
+#import ec2 models
 from model.aws.ec2 import Credential
 from model.aws.ec2 import Instance
 from model.aws.ec2 import InstanceDetail
 from model.aws.ec2 import ImageDetail
+
+#import cloudwatch models
+from model.aws.cloudwatch import CloudWatch
 
 class CloudWatch():
     
@@ -28,5 +32,10 @@ class CloudWatch():
     def get_instance_metric(self):
         client = self.get_cloudwatch_client()
         response = client.get_metric_statistics(MetricName='CPUUtilization',Dimensions=[{'Name':'InstanceId','Value':self.instance_id}])
-        return response
-
+        cloud_metric = CloudWatch("cloudwatch","metric")
+        res = cloud_metric.insert_document(response)
+        if res:
+            return res
+        else:
+            return False
+  

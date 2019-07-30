@@ -20,9 +20,7 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-xs-9 pull-right login-details">
                         <ul class="topBarNav">
-                            <li class="active-link">
-                                <a href="/">Home</a>
-                            </li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -50,27 +48,30 @@
                                 <a class="sub-title" href="#"><b>Amazon web services cloud</b></a>
                             </div>
                             <p>
-                                Amazon AWS is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through a global network of Amazon-managed data centers.<br /> More details on AWS, refer link -
+                                Amazon AWS is a cloud computing service created by Amazon for building, testing, deploying, and managing applications and services through a global network of Amazon-managed data centers.<br /> More details on AWS, refer link -
                                 <a href="https://aws.amazon.com/what-is-aws/" class="refer-link">https://aws.amazon.com/what-is-aws/</a>
                             </p>
                         </div>
-                       
+                     
                     <!-- end col -->
-                    <div class="col-md-8 right-panel">
+                    <div class="center">
                         <form action="" method="POST">
-                            <div class="login-details" align=center>
+                            <div class="login-details" align="center">
                                 <label>Email : </label>
                                 <input type="text" name="username" class="form-control" value={{request.form.username}}>
                             </div><br>
-                            <div class="login-details" align=center>
+                            <div class="login-details" align="center">
                                 <label>Password : </label>
                                 <input type="password" name="password" class="form-control" value={{request.form.password}}>
                             </div><br>
-                            <p align="left">
+                            <div class="center">
+                            <p>
                                 <button type="submit" class="btn btn-primary" align="left">Submit</button><br><br>
                             </p>
+                            </div>
                             </form>
-                    </div>
+                        </div>
+                 </div>
                     <!-- end col -->
                 </div>
                 <!-- end row -->
@@ -79,5 +80,7 @@
         </div>
         <!-- end body-wrapper -->
     </section>
+
+
 </body>
 </html>

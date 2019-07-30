@@ -2,8 +2,10 @@
 {
     width:100%; 
 	background-color: #0e5196; TEXT-ALIGN: center;margin:0;padding:0;
-} 
-
+}
+.center {
+    width: 800px;
+}
 .color
 {
 	color:#EDF5F7;

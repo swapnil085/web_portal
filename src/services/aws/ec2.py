@@ -4,6 +4,7 @@ import boto3
 from botocore.exceptions import ClientError
 from datetime import datetime
 from dateutil.parser import parse
+from elasticsearch import Elasticsearch
 
 #import models
 from model.aws.ec2 import Credential

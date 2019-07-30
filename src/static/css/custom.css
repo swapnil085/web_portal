@@ -58,7 +58,7 @@ h6 {
 }
 .login-details ul li {
 	float: left;
-	margin: 0;
+	margin: 12;
 }
 .login-details ul.topBarNav {
 	padding: 40px 0;
