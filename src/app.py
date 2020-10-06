@@ -18,6 +18,7 @@ app.register_blueprint(user)
 @app.route("/",methods=["GET"])
 @app.route("/home",methods=["GET"])
 def index():
+    print("Hello World!")
     return render_template("index.html")
 
 
